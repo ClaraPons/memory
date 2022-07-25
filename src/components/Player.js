@@ -6,7 +6,7 @@ class Player extends React.Component {
          <form>
            
             <label htmlFor="Nickname">Nickname :</label>
-			<input type="text"  id="text" name="text" placeholder="exemple : jad"/>
+			<input type="text" placeholder="exemple : jad" onChange={this.props.handlePseudo} value={this.props.pseudo}/>
 
 
 			{/* <label htmlFor="level">Choose your level:</label>
@@ -17,8 +17,7 @@ class Player extends React.Component {
 					<option value="4">4</option>
 				</select> */}
 
-
-				<button>Play</button>
+	    	<button>Play</button>
 
 			
         </form>
