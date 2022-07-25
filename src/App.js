@@ -5,11 +5,22 @@ import Score from "./components/Score";
 import { Component } from 'react';
 import Player from "./components/Player"
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state({
+        pseudo:''
+    })
+}
   render(){
   return (
     <>
+    {/* <span>{this.state.pseudo}</span> */}
     <h1>Memory Game</h1>
     <Player />
+    {/* if onsubmit true { */}
+    <Card />
+    {/* if partie fini  */}
+    <Score />
     </>
   );
 }
