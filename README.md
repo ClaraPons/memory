@@ -37,6 +37,7 @@ que le calcul du nombre de coups fonctionne
 que les cartes se retournent au clic
 que la partie finisse quand toutes les cartes sont retournées
 que le bouton relance de la partie fonctionne
+
 Fonctionnalités "bonus" :
 
 une animation sur l'affichage des cartes
