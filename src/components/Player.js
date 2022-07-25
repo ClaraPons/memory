@@ -6,10 +6,10 @@ class Player extends React.Component {
 		<>
 		{this.props.isSubmitted === false && 
          <form onSubmit={this.props.handleSubmit}>
-           
-            <label htmlFor="Nickname">Nickname :</label>
-			<input type="text" placeholder="exemple : jad" onChange={this.props.handlePseudo} value={this.props.pseudo} required/>
-
+			<div className='w-75'>
+            <label className='fs-2 text m-3 text-light' htmlFor="Nickname">Nickname :</label>
+			<input className="input-group mb-3 p-2" type="text" placeholder="Exemple : Omnivers" onChange={this.props.handlePseudo} value={this.props.pseudo} required/>
+			</div>
 
 			{/* <label htmlFor="level">Choose your level:</label>
 				<select id="home" >
@@ -19,7 +19,7 @@ class Player extends React.Component {
 					<option value="4">4</option>
 				</select> */}
 
-	    	<button>Play</button>
+	    	<button className='play btn btn-outline-success p-3 fs-2 text'>Play</button>
 
 			
         </form>
