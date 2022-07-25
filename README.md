@@ -1,4 +1,5 @@
-#memory
+#MEMORY
+
 // Définition des règles du jeu :
 
 Tout d’abord, étaler les cartes (20 cartes) face contre table afin que le joueur ne puisse les identifier. Une fois cela fait, le premier joueur retourne 2 cartes de son choix.
