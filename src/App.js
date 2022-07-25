@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React  from 'react';
-import Card from "./Card.js";
-import Score from "./Score.js";
+import Card from "./components/Card";
+import Score from "./components/Score.js";
 import { Component } from 'react';
 
 class App extends React.Component {
