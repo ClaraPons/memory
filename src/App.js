@@ -1,15 +1,15 @@
 import './App.css';
 import React  from 'react';
-import Card from "./components/Card";
-import Score from "./components/Score";
-import { Component } from 'react';
+// import Card from "./components/Card";
+// import Score from "./components/Score";
 import Player from "./components/Player"
+
 class App extends React.Component {
   constructor(){
     super()
-    this.state({
+    this.state = {
         pseudo:''
-    })
+    }
 }
   render(){
   return (
@@ -18,9 +18,9 @@ class App extends React.Component {
     <h1>Memory Game</h1>
     <Player />
     {/* if onsubmit true { */}
-    <Card />
+    {/* <Card /> */}
     {/* if partie fini  */}
-    <Score />
+    {/* <Score /> */}
     </>
   );
 }
