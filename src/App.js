@@ -38,8 +38,7 @@ handleSubmit = (e) => {
       isSubmitted={this.state.isSubmitted} 
       handlePseudo={this.handlePseudo} 
       handleSubmit={this.handleSubmit}/>
-    {/* if onsubmit true { */}
-     <Card isSubmitted={this.state.isSubmitted}/> 
+    <Card isSubmitted={this.state.isSubmitted}/> 
     {/* if partie fini  */}
     {/* <Score /> */}
     </section>

@@ -19,7 +19,7 @@ class Player extends React.Component {
 					<option value="4">4</option>
 				</select> */}
 
-	    	<button className='play btn btn-outline-success p-3 fs-2 text'>Play</button>
+	    	<button className='play btn btn-success p-3 fs-2 text'>Play</button>
 
 			
         </form>
