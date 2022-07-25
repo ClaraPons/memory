@@ -1,13 +1,14 @@
-memory
+#MEMORY
+
 // Définition des règles du jeu :
 
-Tout d’abord, étaler les cartes (20 cartes) face contre table afin que le joueur ne puisse les identifier. Une fois cela fait, le premier joueur retourne 2 cartes de son choix.
+1) Tout d’abord, étaler les cartes (20 cartes) face contre table afin que le joueur ne puisse les identifier. Une fois cela fait, le premier joueur retourne 2 cartes de son choix.
 
-Si les cartes sont identiques, le joueur les conserve à côté de lui et rejoue. Il marque un point
+2) Si les cartes sont identiques, le joueur les conserve à côté de lui et rejoue. Il marque un point
 
-Si les cartes ne sont pas identiques, le joueur les retourne face cachée de nouveau. Il recommence
+3) Si les cartes ne sont pas identiques, le joueur les retourne face cachée de nouveau. Il recommence
 
-Le jeu de termine une fois que toutes les paires ont été trouvées.
+4) Le jeu de termine une fois que toutes les paires ont été trouvées.
 
 // Fonctionnalités de l'App :
 
@@ -24,8 +25,8 @@ Scores :
 - on calcule en combien de coups le joueur trouve toutes les paires
 - on affiche à la fin son score (soit le nombre de coups utilisé pour finir le jeu)
 - Redémarrage de partie
+- un bouton pour relancer la partie
 
-un bouton pour relancer la partie
 // Definition of done
 
 Fonctionnalités minimum pour que le jeu fonctionne :
