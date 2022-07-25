@@ -4,7 +4,7 @@ class Player extends React.Component {
 	render() {
 		return(
          <form>
-
+            
         </form>
 		)
 	}
