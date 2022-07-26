@@ -20,6 +20,9 @@ class Card extends React.Component {
   }
 
   handleCards = (card) => {
+    this.state({
+       
+    })
 
   }
   shuffleCards =(array)=>{
