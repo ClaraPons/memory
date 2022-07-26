@@ -8,18 +8,21 @@ import image4 from '../images/milk.jpeg'
 import image5 from '../images/oldman.png'
 import image6 from '../images/bootstrap.png'
 import image7 from '../images/gigachad-meme.png'
-import image8 from '../images/react.png'
+import image8 from '../images/REACT.png'
 import image9 from '../images/pixelart.png'
 
 class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 1],
+      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
     }
   }
 
   handleCards = () => {}
+  shuffleCards =()=>{
+	
+  }
 
   render() {
     return (
@@ -27,12 +30,11 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-9">
-              {this.state.cards.map((card, i) => (
+              {this.state.cards.map((card) => (
                 <>
-                  {console.log(`${'image'}${i}`)}
                   <img
-                    src={`${'image'}${i}`}
-                    alt="Back"
+                    src={card}
+                    alt="front"
                     style={{ width: '8rem' }}
                     onClick={this.handleCards}
                   />
