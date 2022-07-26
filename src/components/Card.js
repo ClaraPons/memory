@@ -26,8 +26,6 @@ class Card extends React.Component {
 	this.gameRules()
   }
 
-  // test 
-
   gameRules = () =>{
 	if(this.state.returned>1){
 		this.state.cards.forEach(card => {
