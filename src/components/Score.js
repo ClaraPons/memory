@@ -10,11 +10,7 @@ class Score extends React.Component {
 render() {		
     return(
 		<>
-		{this.props.isSubmitted &&
-            <h1 className='moves'>
-                Moves : {this.state.score}
-            </h1>
-		}
+            <h1 className='moves'>{`Moves : ${this.props.score}`}</h1>
 		</>
 		)
 	}

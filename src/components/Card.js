@@ -1,4 +1,5 @@
 import React from 'react'
+import Score from "./Score";
 import image from '../images/card-game.png'
 import image0 from '../images/js.png'
 import image1 from '../images/NODE.png'
@@ -19,10 +20,12 @@ class Card extends React.Component {
 		{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9},{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9}
 	],
 	  returned:null,
-	  comparaison:[]
+	  comparaison:[],
+	  score:null,
 	} 
   }
   handleCards = (index) => {
+	this.setState({score:this.state.score+1})
 	const cardsClone = [...this.state.cards]
 	const clonedComparaison=[...this.state.comparaison,cardsClone[index]]
     cardsClone[index].returned = true
@@ -91,9 +94,12 @@ class Card extends React.Component {
             </div>
           </div>
         )}
+		<Score score={this.state.score} />
       </>
     )
-  }
 }
+}
+
+
 export default Card
 
