@@ -20,7 +20,9 @@ class Card extends React.Component {
   }
 
   handleCards = (card) => {
-
+	this.setState({
+		
+	})
   }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex;
@@ -47,7 +49,6 @@ class Card extends React.Component {
                     src={card.front}
                     alt="back"
                     style={{ width: '8rem'}}
-                    onClick={()=>this.handleCards(card)}
                   />
 				  ):(
 				  <img key={i}
