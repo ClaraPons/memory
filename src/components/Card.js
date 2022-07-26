@@ -1,5 +1,5 @@
 import React from 'react'
-import image from "../card-game.png"
+import image from "../images/card-game.png"
 
 class Card extends React.Component {
 	constructor(){
@@ -8,9 +8,7 @@ class Card extends React.Component {
 		  cards:[1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
 		}
 	  }
-
 	handleCards = () => {
-
 	}
 
 	render() {
@@ -23,7 +21,6 @@ class Card extends React.Component {
 					<img src={image} alt='Back' style={{width: "8rem"}} onClick={this.handleCards}/>
 				)}
 				</div>
-				
         </div>
 		}
 		</>
