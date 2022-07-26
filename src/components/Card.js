@@ -57,7 +57,7 @@ class Card extends React.Component {
                 <>
 				{card.returned?( 
                   <img key={index}
-				  	className='m-1'
+				  	className='m-1 border'
                     src={card.front}
                     alt="back"
                     style={{ width: '8rem'}}
