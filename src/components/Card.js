@@ -15,7 +15,7 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false},{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
+      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
 	  returned:null,
 	}
   }
@@ -25,6 +25,9 @@ class Card extends React.Component {
     this.setState({cards: taskClone, returned:this.state.returned+1})
 	this.gameRules()
   }
+
+  // test 
+
   gameRules = () =>{
 	if(this.state.returned>1){
 		this.state.cards.forEach(card => {
