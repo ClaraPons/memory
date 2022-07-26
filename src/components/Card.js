@@ -15,11 +15,16 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
+      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9,image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
     }
   }
 
-  handleCards = () => {}
+  handleCards = (card) => {
+	<>
+	{console.log(card)}
+	
+    </>
+  }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex;
 	while (currentIndex != 0) {
@@ -37,13 +42,14 @@ class Card extends React.Component {
           <div className="content pt-3">
             <div className="row col-9">
 			{this.shuffleCards(this.state.cards)}
-              {this.state.cards.map((card) => (
+              {this.state.cards.map((card,i) => (
                 <>
-                  <img
-                    src={card}
-                    alt="front"
-                    style={{ width: '8rem' }}
-                    onClick={this.handleCards}
+                  <img key={i}
+				  	className='m-1'
+                    src={image}
+                    alt="back"
+                    style={{ width: '8rem'}}
+                    onClick={()=>this.handleCards(card)}
                   />
                 </>
               ))}
@@ -56,3 +62,11 @@ class Card extends React.Component {
 }
 
 export default Card
+
+
+{/* -dès qu'on click ça se tourne :
+	 back
+	 onclick sur  1 fois le back => tourne le front
+	 id
+	 
+*/}
