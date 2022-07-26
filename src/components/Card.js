@@ -52,7 +52,7 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-10">
-			{this.shuffleCards(this.state.cards)}
+			{/* {this.shuffleCards(this.state.cards)} */}
               {this.state.cards.map((card,index) => (
                 <>
 				{card.returned?( 
@@ -61,7 +61,6 @@ class Card extends React.Component {
                     src={card.front}
                     alt="back"
                     style={{ width: '8rem'}}
-                    onClick={()=>this.handleCards(card)}
                   />
 				  ):(
 				  <img key={index}
