@@ -19,7 +19,7 @@ class Card extends React.Component {
 	  returned:null,
 	}
   }
-  handleCards = (card, index) => {
+  handleCards = (index) => {
 	const taskClone = [...this.state.cards]
     taskClone[index].returned = true
     this.setState({cards: taskClone, returned:this.state.returned+1})
@@ -34,6 +34,7 @@ class Card extends React.Component {
 			returned:null,
 		})
 	}
+	
   }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex
@@ -66,7 +67,7 @@ class Card extends React.Component {
                     src={image}
                     alt="back"
                     style={{ width: '8rem'}}
-                    onClick={()=>this.handleCards(card, index)}
+                    onClick={()=>this.handleCards(index)}
                   />
 				)} 
                 </>
@@ -82,9 +83,6 @@ class Card extends React.Component {
 export default Card
 
 
-{/* -dès qu'on click ça se tourne :
-	 back
-	 onclick sur  1 fois le back => tourne le front
-	 id
+{/* 
 	 
 */}
