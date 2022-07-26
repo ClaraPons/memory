@@ -15,16 +15,15 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9,image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
-	  Theimage: image
-
+      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
     }
   }
 
-  handleCards = (card,i) => {
-		this.setState({
-			Theimage: card
-		})
+  handleCards = (card, index) => {
+	const taskClone = [...this.state.cards]
+    taskClone[index].returned = true
+    this.setState({cards: taskClone})
+    console.log(card)
   }
 
   shuffleCards =(array)=>{
@@ -43,16 +42,26 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-9">
-			{this.shuffleCards(this.state.cards)}
-              {this.state.cards.map((card,i) => (
+			{/* {this.shuffleCards(this.state.cards)} */}
+              {this.state.cards.map((card,index) => (
                 <>
-                  <img key={i}
+				{card.returned?( 
+                  <img key={index}
 				  	className='m-1'
-                    src={this.state.Theimage}
+                    src={card.front}
                     alt="back"
                     style={{ width: '8rem'}}
-                    onClick={()=>this.handleCards(card)}
+                    onClick={()=>this.handleCards(card), index}
                   />
+				  ):(
+				  <img key={index}
+				  	className='m-1'
+                    src={image}
+                    alt="back"
+                    style={{ width: '8rem'}}
+                    onClick={()=>this.handleCards(card, index)}
+                  />
+				)} 
                 </>
               ))}
             </div>
