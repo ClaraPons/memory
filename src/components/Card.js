@@ -8,7 +8,7 @@ import image4 from '../images/milk.jpeg'
 import image5 from '../images/oldman.png'
 import image6 from '../images/bootstrap.png'
 import image7 from '../images/gigachad-meme.png'
-import image8 from '../images/react.png'
+import image8 from '../images/REACT.png'
 import image9 from '../images/pixelart.png'
 
 class Card extends React.Component {
@@ -16,6 +16,7 @@ class Card extends React.Component {
     super()
     this.state = {
       cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 1],
+	  images: [{image0}]
     }
   }
 
@@ -31,7 +32,7 @@ class Card extends React.Component {
                 <>
                   {console.log(`${'image'}${i}`)}
                   <img
-                    src={`${'image'}${i}`}
+                    src={`${card}${i}`}
                     alt="Back"
                     style={{ width: '8rem' }}
                     onClick={this.handleCards}
