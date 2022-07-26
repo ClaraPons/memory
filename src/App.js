@@ -2,7 +2,7 @@ import './App.css';
 import React  from 'react';
 import Card from "./components/Card";
 import Score from "./components/Score";
-import Player from "./components/Player"
+import Player from "./components/Player";
 
 class App extends React.Component {
   constructor(){
@@ -19,9 +19,7 @@ handlePseudo =(e)=>{
 }
 handleSubmit = (e) => {
   e.preventDefault(
-    this.setState({ isSubmitted: true}, () =>{
-      console.log(this.state.isSubmitted)
-    })
+    this.setState({ isSubmitted: true})
   )
 }
   render(){

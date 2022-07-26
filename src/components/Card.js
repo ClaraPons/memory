@@ -18,19 +18,19 @@ class Card extends React.Component {
       cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
     }
   }
-
-  handleCards = (card) => {
-	this.setState({
-		
-	})
+  handleCards = (card, index) => {
+	const taskClone = [...this.state.cards]
+    taskClone[index].returned = true
+    this.setState({cards: taskClone})
   }
+
   shuffleCards =(array)=>{
-	let currentIndex = array.length,  randomIndex;
+	let currentIndex = array.length,  randomIndex
 	while (currentIndex != 0) {
 	  randomIndex = Math.floor(Math.random() * currentIndex);
 	  currentIndex--;
 	  [array[currentIndex], array[randomIndex]] = [
-		array[randomIndex], array[currentIndex]];
+		array[randomIndex], array[currentIndex]]
 	}
   }
 
@@ -40,23 +40,22 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-9">
-			{this.shuffleCards(this.state.cards)}
-              {this.state.cards.map((card,i) => (
+              {this.state.cards.map((card,index) => (
                 <>
 				{card.returned?( 
-                  <img key={i}
+                  <img key={index}
 				  	className='m-1'
                     src={card.front}
                     alt="back"
                     style={{ width: '8rem'}}
                   />
 				  ):(
-				  <img key={i}
+				  <img key={index}
 				  	className='m-1'
                     src={image}
                     alt="back"
                     style={{ width: '8rem'}}
-                    onClick={()=>this.handleCards(card)}
+                    onClick={()=>this.handleCards(card, index)}
                   />
 				)} 
                 </>
