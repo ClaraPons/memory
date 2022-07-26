@@ -15,12 +15,21 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 1],
-	  images: [{image0}]
+      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
     }
   }
 
   handleCards = () => {}
+
+  shuffleCards =(array)=>{
+	let currentIndex = array.length,  randomIndex
+	while (currentIndex != 0) {
+	  randomIndex = Math.floor(Math.random() * currentIndex);
+	  currentIndex--;
+	  [array[currentIndex], array[randomIndex]] = [
+		array[randomIndex], array[currentIndex]]
+	}
+  }
 
   render() {
     return (
@@ -28,12 +37,12 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-9">
-              {this.state.cards.map((card, i) => (
+			{this.shuffleCards(this.state.cards)}
+              {this.state.cards.map((card) => (
                 <>
-                  {console.log(`${'image'}${i}`)}
                   <img
-                    src={`${card}${i}`}
-                    alt="Back"
+                    src={card}
+                    alt="front"
                     style={{ width: '8rem' }}
                     onClick={this.handleCards}
                   />
