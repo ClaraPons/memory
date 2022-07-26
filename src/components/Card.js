@@ -15,9 +15,14 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
+<<<<<<< HEAD
       cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
 	  returned:null,
 	}
+=======
+      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false},{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
+    }
+>>>>>>> f40c37e (games rules)
   }
   handleCards = (index) => {
 	const taskClone = [...this.state.cards]
@@ -55,7 +60,7 @@ class Card extends React.Component {
 			{/* {this.shuffleCards(this.state.cards)} */}
               {this.state.cards.map((card,index) => (
                 <>
-				{card.returned?( 
+				{card.returned ?( 
                   <img key={index}
 				  	className='m-1'
                     src={card.front}
