@@ -15,15 +15,12 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9,image0, image1, image2, image3, image4, image5, image6, image7, image8, image9],
+      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
     }
   }
 
   handleCards = (card) => {
-	<>
-	{console.log(card)}
-	
-    </>
+
   }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex;
@@ -44,13 +41,23 @@ class Card extends React.Component {
 			{this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card,i) => (
                 <>
+				{card.returned?( 
                   <img key={i}
+				  	className='m-1'
+                    src={card.front}
+                    alt="back"
+                    style={{ width: '8rem'}}
+                    onClick={()=>this.handleCards(card)}
+                  />
+				  ):(
+				  <img key={i}
 				  	className='m-1'
                     src={image}
                     alt="back"
                     style={{ width: '8rem'}}
                     onClick={()=>this.handleCards(card)}
                   />
+				)} 
                 </>
               ))}
             </div>
