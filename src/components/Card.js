@@ -55,7 +55,7 @@ class Card extends React.Component {
 			{/* {this.shuffleCards(this.state.cards)} */}
               {this.state.cards.map((card,index) => (
                 <>
-				{card.returned?( 
+				{card.returned ?( 
                   <img key={index}
 				  	className='m-1 border'
                     src={card.front}
