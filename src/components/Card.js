@@ -20,8 +20,14 @@ class Card extends React.Component {
   }
 
   handleCards = () => {}
-  shuffleCards =()=>{
-	
+  shuffleCards =(array)=>{
+	let currentIndex = array.length,  randomIndex;
+	while (currentIndex != 0) {
+	  randomIndex = Math.floor(Math.random() * currentIndex);
+	  currentIndex--;
+	  [array[currentIndex], array[randomIndex]] = [
+		array[randomIndex], array[currentIndex]];
+	}
   }
 
   render() {
@@ -30,6 +36,7 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-9">
+			{this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card) => (
                 <>
                   <img
