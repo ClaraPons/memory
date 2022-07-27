@@ -11,17 +11,16 @@ import image6 from '../images/bootstrap.png'
 import image7 from '../images/gigachad-meme.png'
 import image8 from '../images/REACT.png'
 import image9 from '../images/pixelart.png'
-
+	
 class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [
-		{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9},{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9}
-	],
+      cards:[{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9},{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9}],
 	  returned:null,
 	  comparaison:[],
 	  score:null,
+	  shuffled:false,
 	} 
   }
   handleCards = (index) => {
@@ -64,6 +63,7 @@ class Card extends React.Component {
 	}
   }
   shuffleCards =(array)=>{
+	this.setState({shuffled:true})
 	let currentIndex = array.length,  randomIndex;
 	while (currentIndex !== 0) {
 	  randomIndex = Math.floor(Math.random() * currentIndex);
@@ -72,14 +72,13 @@ class Card extends React.Component {
 		array[randomIndex], array[currentIndex]];
 	}
   }
-
   render() {
     return (
       <>
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-11 d-flex justify-content-center">
-			{/* {this.shuffleCards(this.state.cards)} */}
+			{!this.state.shuffled&&this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card,index) => (
                 <>
 				{card.returned ?( 
