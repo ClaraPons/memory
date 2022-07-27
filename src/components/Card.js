@@ -16,34 +16,20 @@ class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards: [
-		{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9},{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9}
-	],
-	  returned:null,
-	  comparaison:[],
-	  score:null,
-	} 
+      cards: [{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false},{front:image0,returned:false}, {front:image1,returned:false},{front:image2,returned:false}, {front:image3,returned:false},{front:image4,returned:false}, {front:image5,returned:false},{front:image6,returned:false}, {front:image7,returned:false},{front:image8,returned:false}, {front:image9,returned:false}],
+	    returned:[],
+	}
   }
   handleCards = (index) => {
-	this.setState({score:this.state.score+1})
-	const cardsClone = [...this.state.cards]
-	const clonedComparaison=[...this.state.comparaison,cardsClone[index]]
-    cardsClone[index].returned = true
-    this.setState({cards: cardsClone, returned:this.state.returned+1, comparaison:clonedComparaison})
+	  const cardClone = [...this.state.cards]
+    cardClone[index].returned = true
+    this.setState({cards: cardClone, returned:this.state.returned+1})
 	this.gameRules()
   }
-  deleteCards=()=>{	 
-	  if(this.state.comparaison.length===2 && this.state.comparaison[0].id===this.state.comparaison[1].id){
-		this.setState({cards: this.state.cards.filter(card => { 
-			return	 card !== this.state.comparaison[0] && card!== this.state.comparaison[1]})});
-		}
-	   else{
-		this.setState({
-			comparaison:[]
-		})
-	   }
-  }
+
+
   gameRules = () =>{
+
 	if(this.state.returned>1){
 		this.state.cards.forEach(card => {
 			card.returned=false
