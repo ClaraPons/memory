@@ -29,7 +29,7 @@ class Card extends React.Component {
 	const cardsClone = [...this.state.cards]
 	const clonedComparaison=[...this.state.comparaison,cardsClone[index]]
     cardsClone[index].returned = true
-    this.setState({cards: cardsClone, returned:this.state.returned+1, comparaison:clonedComparaison})
+    this.setState({cards: cardsClone,returned:this.state.returned+1, comparaison:clonedComparaison})
 	this.gameRules()
   }
   deleteCards=()=>{	 
@@ -44,7 +44,7 @@ class Card extends React.Component {
 	   }
   }
   gameRules = () =>{
-	if(this.state.returned>1){
+	  if(this.state.returned===2){
 		this.state.cards.forEach(card => {
 			card.returned=false
 		});
@@ -53,6 +53,7 @@ class Card extends React.Component {
 		})
 		this.deleteCards()
 	}
+	
   }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex;
@@ -75,10 +76,10 @@ class Card extends React.Component {
                 <>
 				{card.returned ?( 
                   <img key={index}
-				  	className='m-1 border rounded-3'
+				  	className='m-1 border rounded-3 bg-white'
                     src={card.front}
                     alt="back"
-                    style={{ width: '7rem'}}
+                    style={{ width: '6rem'}}
                   />
 				  ):(
 				  <img key={index}
