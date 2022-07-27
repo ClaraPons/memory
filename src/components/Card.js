@@ -17,7 +17,7 @@ class Card extends React.Component {
     super()
     this.state = {
       cards: [
-		{front:image0,returned:false, id:0}, {front:image0,returned:false, id:0},{front:image3,returned:false, id:3}, {front:image3,returned:false, id:3},
+		{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9},{front:image0,returned:false, id:0}, {front:image1,returned:false, id:1},{front:image2,returned:false, id:2}, {front:image3,returned:false, id:3},{front:image4,returned:false, id:4}, {front:image5,returned:false, id:5},{front:image6,returned:false, id:6}, {front:image7,returned:false, id:7},{front:image8,returned:false, id:8}, {front:image9,returned:false, id:9}
 	],
 	  returned:null,
 	  comparaison:[],
@@ -39,7 +39,7 @@ class Card extends React.Component {
 			this.setState({cards: this.state.cards.filter(card => { 
 			return	 card !== this.state.comparaison[0] && card!== this.state.comparaison[1]})});},500)
 		}
-	   else if(this.state.cards.length===2){
+		else if(this.state.cards.length===2){
 			// this.setState({
 			// 	cards:[]
 			// })
