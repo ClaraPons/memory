@@ -1,5 +1,6 @@
 import React from 'react'
 import Score from './Score'
+import './Cards.css'
 import image from '../images/card-game.png'
 import image0 from '../images/js.png'
 import image1 from '../images/NODE.png'
@@ -40,7 +41,7 @@ class Card extends React.Component {
       ],
       returned: null,
       comparaison: [],
-      score: null,
+      score: 0,
       shuffled: false,
     }
   }
@@ -74,9 +75,10 @@ class Card extends React.Component {
         })
       }, 500)
     } else if (this.state.cards.length === 2) {
-      // this.setState({
-      // 	cards:[]
-      // })
+		this.setState({
+			cards:[],
+			endGame: true
+		})
     } else {
       this.setState({
         comparaison: [],
@@ -112,7 +114,7 @@ class Card extends React.Component {
   render() {
     return (
       <>
-        {this.props.isSubmitted && (
+        {!this.state.endGame && this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-11 d-flex justify-content-center">
               {!this.state.shuffled && this.shuffleCards(this.state.cards)}
@@ -141,7 +143,7 @@ class Card extends React.Component {
             </div>
           </div>
         )}
-        <Score score={this.state.score} />
+		<Score score={this.state.score} endGame={this.state.endGame} pseudo={this.props.pseudo}/>
       </>
     )
   }
