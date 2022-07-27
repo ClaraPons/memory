@@ -76,11 +76,11 @@ class Card extends React.Component {
         })
       }, 500)
     } else if (this.state.cards.length === 2) {
-		document.body.style.backgroundImage = `url(${background})`;
-		this.setState({
-			cards:[],
-			endGame: true
-		})
+      this.setState({
+        cards:[],
+        endGame: true
+      })
+      document.body.style.backgroundImage = `url(${background})`;
     } else {
       this.setState({
         comparaison: [],
@@ -125,7 +125,7 @@ class Card extends React.Component {
                   {card.returned ? (
                     <img
                       key={index}
-                      className="m-1 border rounded-3 front"
+                      className="m-1 border rounded-3 front bg-white"
                       src={card.front}
                       alt="back"
                       style={{ width: '7rem',height:'9rem' }}
@@ -143,9 +143,13 @@ class Card extends React.Component {
                 </>
               ))}
             </div>
-            <Score score={this.state.score} endGame={this.state.endGame} pseudo={this.props.pseudo}/>
           </div>
         )}
+        <Score
+          score={this.state.score}
+          endGame={this.state.endGame}
+          pseudo={this.props.pseudo}
+        />
       </>
     )
   }
