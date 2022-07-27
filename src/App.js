@@ -1,7 +1,6 @@
 import './App.css';
 import React  from 'react';
 import Card from "./components/Card";
-import Score from "./components/Score";
 import Player from "./components/Player";
 
 class App extends React.Component {
@@ -47,8 +46,6 @@ handleSubmit = (e) => {
         }        
     </main>} */}
     <Card isSubmitted={this.state.isSubmitted}/>
-    {/* if partie fini  */}
-    <Score isSubmitted={this.state.isSubmitted}/>
     </main>
   );
 }
