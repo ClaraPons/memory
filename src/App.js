@@ -2,6 +2,7 @@ import './App.css';
 import React  from 'react';
 import Card from "./components/Card";
 import Player from "./components/Player";
+import background from "./images/background2.jpg"
 
 class App extends React.Component {
   constructor(){
@@ -17,9 +18,12 @@ handlePseudo =(e)=>{
     })
 }
 handleSubmit = (e) => {
-  e.preventDefault(
+  e.preventDefault()
     this.setState({ isSubmitted: true})
-  )
+    this.changeBodyBackground()
+}
+changeBodyBackground=()=>{
+  document.body.style.backgroundImage = `url(${background})`;
 }
   render(){
   return (

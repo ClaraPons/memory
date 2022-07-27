@@ -12,6 +12,7 @@ import image6 from '../images/bootstrap.png'
 import image7 from '../images/gigachad-meme.png'
 import image8 from '../images/REACT.png'
 import image9 from '../images/pixelart.png'
+import background from "../images/background1.jpg"
 
 class Card extends React.Component {
   constructor() {
@@ -75,6 +76,7 @@ class Card extends React.Component {
         })
       }, 500)
     } else if (this.state.cards.length === 2) {
+		document.body.style.backgroundImage = `url(${background})`;
 		this.setState({
 			cards:[],
 			endGame: true

@@ -10,13 +10,13 @@ class Score extends React.Component {
 render() {		
     return(
 		<>
-        {this.props.endGame && this.props.score > 20 && this.props.score < 30 && (
+        {this.props.endGame && this.props.score > 40 && this.props.score <= 45 && (
             <>
             <h2 className='endGame-title'> Bravo {this.props.pseudo} ! Vous avez terminé en {this.props.score} coups !</h2>
             <p className='endGame-text'> Vous gagnez la médaille d'or</p>
             </>
         )}
-        {this.props.endGame && this.props.score > 40 && this.props.score < 50 && (
+        {this.props.endGame && this.props.score > 45 && this.props.score <= 50 && (
             <>
             <h2 className='endGame-text'> Bravo {this.props.pseudo} ! Vous avez terminé en {this.props.score} coups !</h2>
             <p className='endGame-text'> Vous gagnez la médaille d'argent</p>
