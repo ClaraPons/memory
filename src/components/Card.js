@@ -52,7 +52,7 @@ class Card extends React.Component {
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-10">
-			{this.shuffleCards(this.state.cards)}
+			{/* {this.shuffleCards(this.state.cards)} */}
               {this.state.cards.map((card,index) => (
                 <>
 				{card.returned?( 
