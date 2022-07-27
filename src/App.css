@@ -57,3 +57,19 @@ main{
 img{
   cursor: pointer;
 }
+
+.front,
+.back {
+  /* backface-visibility: hidden; */
+  transform-style: preserve3d;
+  transition: all 1.3s;
+}
+
+
+.back {
+  transform: rotateY(0deg);
+}
+
+.front {
+  transform: rotateY(360deg);
+}
