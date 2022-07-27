@@ -10,26 +10,26 @@ class Score extends React.Component {
 render() {		
     return(
 		<>
-        {this.props.endGame && this.props.score > 40 && this.props.score <= 45 && (
+        {this.props.endGame && this.props.score < 45 && (
             <>
             <h2 className='endGame-title'> Bravo {this.props.pseudo} ! Vous avez terminé en {this.props.score} coups !</h2>
             <p className='endGame-text'> Vous gagnez la médaille d'or</p>
             </>
         )}
-        {this.props.endGame && this.props.score > 45 && this.props.score <= 50 && (
+        {this.props.endGame && this.props.score < 50 && (
             <>
             <h2 className='endGame-text'> Bravo {this.props.pseudo} ! Vous avez terminé en {this.props.score} coups !</h2>
             <p className='endGame-text'> Vous gagnez la médaille d'argent</p>
             </>
         )}
-        {this.props.endGame && this.props.score > 50 && (
+        {this.props.endGame && this.props.score >= 50 && (
             <>
             <h2 className='endGame-text'> Bravo {this.props.pseudo} ! Vous avez terminé en {this.props.score} coups !</h2>
             <p className='endGame-text'> Vous gagnez la médaille de bronze</p>
             </>
         )}
 
-        {!this.props.endGame && <h1 className='moves'>{`Moves : ${this.props.score}`}</h1>}
+        {!this.props.endGame && <h1 className='title-moves'>Moves : <span className='moves'>{this.props.score}</span></h1>}
 		</>
 		)
 	}

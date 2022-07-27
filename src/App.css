@@ -29,9 +29,14 @@ form{
   font-family: shadow;
   font-size:60px;
 }
-.moves{
+.title-moves{
   font-family: shadow;
   color: white;
+}
+.moves{
+  font-family: shadow;
+  color:rgba(4, 116, 0, 0.637);
+  font-weight: bold;
 }
 main{
   display: flex;

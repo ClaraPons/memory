@@ -6,12 +6,12 @@ import image0 from '../images/js.png'
 import image1 from '../images/NODE.png'
 import image2 from '../images/benoit-pic.png'
 import image3 from '../images/julie-pic.png'
-import image4 from '../images/milk.png'
+import image4 from '../images/Jeanguo.jfif'
 import image5 from '../images/oldman.png'
 import image6 from '../images/bootstrap.png'
-import image7 from '../images/gigachad-meme.png'
+import image7 from '../images/david.jfif'
 import image8 from '../images/REACT.png'
-import image9 from '../images/pixelart.png'
+import image9 from '../images/Logo_Konexio.png'
 import background from "../images/background1.jpg"
 
 class Card extends React.Component {
@@ -128,7 +128,7 @@ class Card extends React.Component {
                       className="m-1 border rounded-3 front"
                       src={card.front}
                       alt="back"
-                      style={{ width: '7rem' }}
+                      style={{ width: '7rem',height:'9rem' }}
                     />
                   ) : (
                     <img
@@ -136,16 +136,16 @@ class Card extends React.Component {
                       className="m-1 back"
                       src={image}
                       alt="back"
-                      style={{ width: '8rem' }}
+                      style={{ width: '8rem', }}
                       onClick={() => this.handleCards(index)}
                     />
                   )}
                 </>
               ))}
             </div>
+            <Score score={this.state.score} endGame={this.state.endGame} pseudo={this.props.pseudo}/>
           </div>
         )}
-		<Score score={this.state.score} endGame={this.state.endGame} pseudo={this.props.pseudo}/>
       </>
     )
   }
