@@ -75,10 +75,10 @@ class Card extends React.Component {
         })
       }, 500)
     } else if (this.state.cards.length === 2) {
-		this.setState({
-			cards:[],
-			endGame: true
-		})
+      this.setState({
+        cards: [],
+        endGame: true,
+      })
     } else {
       this.setState({
         comparaison: [],
@@ -143,7 +143,11 @@ class Card extends React.Component {
             </div>
           </div>
         )}
-		<Score score={this.state.score} endGame={this.state.endGame} pseudo={this.props.pseudo}/>
+        <Score
+          score={this.state.score}
+          endGame={this.state.endGame}
+          pseudo={this.props.pseudo}
+        />
       </>
     )
   }

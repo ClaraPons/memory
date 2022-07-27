@@ -67,3 +67,8 @@ img{
   transform: rotateY(360deg);
   transition: all 0.6s;
 }
+
+.trophy {
+  width: 370px;
+  height: auto;
+}
