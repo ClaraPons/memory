@@ -49,7 +49,7 @@ changeBodyBackground=()=>{
             </section>
         }        
     </main>} */}
-    <Card isSubmitted={this.state.isSubmitted}/>
+    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo}/>
     </main>
   );
 }

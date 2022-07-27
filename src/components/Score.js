@@ -40,7 +40,7 @@ class Score extends React.Component {
             <button className='btn btn-success p-3 fs-2 text' onClick={this.refreshPage}>Replay</button>
           </>
         )}
-        {this.props.endGame && this.props.score > 50 && (
+        {this.props.endGame && this.props.score > 55 && (
           <>
             <h2 className="endGame-text">
               {' '}

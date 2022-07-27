@@ -118,7 +118,7 @@ class Card extends React.Component {
       <>
         {!this.state.endGame && this.props.isSubmitted && (
           <div className="content pt-3">
-            <div className="row col-11 d-flex justify-content-center">
+            <div className="container">
               {!this.state.shuffled && this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card, index) => (
                 <>
@@ -136,7 +136,7 @@ class Card extends React.Component {
                       className="m-1 back"
                       src={image}
                       alt="back"
-                      style={{ width: '8rem', }}
+                      style={{ width: '7rem',height:'9rem' }}
                       onClick={() => this.handleCards(index)}
                     />
                   )}
