@@ -10,7 +10,12 @@ class Score extends React.Component {
 render() {		
     return(
 		<>
-            <h1 className='moves'>{`Moves : ${this.props.score}`}</h1>
+
+{this.props.score === null ? (
+  <h1 className='moves'>Moves : 0</h1>
+) : (
+  <h1 className='moves'>{`Moves : ${this.props.score}`}</h1>
+)}
 		</>
 		)
 	}
