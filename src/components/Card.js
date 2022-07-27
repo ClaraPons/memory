@@ -28,17 +28,31 @@ class Card extends React.Component {
   }
 
 
-  gameRules = () =>{
-
-	if(this.state.returned>1){
-		this.state.cards.forEach(card => {
-			card.returned=false
-		});
-		this.setState({
-			returned:null,
-		})
-		this.deleteCards()
-	}
+  deleteCards=()=>{	 
+    console.log(this.state.comparaison[0], this.state.comparaison[1])
+    if(this.state.comparaison[0].id===this.state.comparaison[1].id){
+    this.setState({cards: this.state.cards.filter(card => { 
+      return	 card !== this.state.comparaison[0] && card!== this.state.comparaison[1]})});
+    }
+     else if (this.state.comparaison.length > 1){
+       console.log("on est ici")
+    this.setState({
+      comparaison:[]
+    })
+     }
+  }
+  gameRules = (i) =>{
+  if(this.state.returned>0){
+    this.state.cards.forEach(card => {
+    setTimeout(function(i){
+      card.returned=false
+    },i * 1000)
+    });
+    this.setState({
+      returned:null,
+    })
+    this.deleteCards()
+  }
   }
   shuffleCards =(array)=>{
 	let currentIndex = array.length,  randomIndex;
