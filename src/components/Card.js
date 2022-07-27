@@ -41,6 +41,7 @@ class Card extends React.Component {
       returned: null,
       comparaison: [],
       score: null,
+      shuffled: false,
     }
   }
   handleCards = (index) => {
@@ -96,6 +97,7 @@ class Card extends React.Component {
     }
   }
   shuffleCards = (array) => {
+    this.setState({ shuffled: true })
     let currentIndex = array.length,
       randomIndex
     while (currentIndex !== 0) {
@@ -107,14 +109,13 @@ class Card extends React.Component {
       ]
     }
   }
-
   render() {
     return (
       <>
         {this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="row col-11 d-flex justify-content-center">
-              {/* {this.shuffleCards(this.state.cards)} */}
+              {!this.state.shuffled && this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card, index) => (
                 <>
                   {card.returned ? (
