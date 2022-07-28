@@ -27,12 +27,12 @@ changeBodyBackground=()=>{
   document.body.style.backgroundImage = `url(${background})`;
 }
 
-handleChangeLevel = (e) =>{
- this.setState({
-   level:e.target.value
- })
+// handleChangeLevel = (e) =>{
+//  this.setState({
+//    level:e.target.value
+//  })
  
-}
+// }
 
   render(){
     console.log(this.state.level)
@@ -62,7 +62,7 @@ handleChangeLevel = (e) =>{
             </section>
         }        
     </main>} */}
-    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo} level={this.state.level}/>
+    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo} />
     </main>
   );
 }
