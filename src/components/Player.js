@@ -1,5 +1,9 @@
 import React from 'react'
+
+
+
 class Player extends React.Component {
+
 	render() {
 		return(
 		<>
@@ -11,15 +15,15 @@ class Player extends React.Component {
 			<input className="input-group mb-3 p-2" type="text" placeholder="Exemple : Omnivers" onChange={this.props.handlePseudo} value={this.props.pseudo} required/>
 			</div>
 
-			{/* <label htmlFor="level">Choose your level:</label>
-				<select id="home" >
+			<label htmlFor="level"></label>
+				<select id="home" className='' onChange={this.props.handleChangeLevel}>
+					<option value="">Choose your level</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
-					<option value="4">4</option>
-				</select> */}
+				</select> 
 
-	    	<button className='play btn btn-success p-3 fs-2 text'>Play</button>
+	    	<button className='play btn btn-success fs-2 text'>Play</button>
         </form>
 		}
 		</>
