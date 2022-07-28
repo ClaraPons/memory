@@ -9,7 +9,8 @@ class App extends React.Component {
     super()
     this.state={
       pseudo:"",
-      isSubmitted: false
+      isSubmitted: false,
+      level:1,
     }
   }
 handlePseudo =(e)=>{     
@@ -25,7 +26,16 @@ handleSubmit = (e) => {
 changeBodyBackground=()=>{
   document.body.style.backgroundImage = `url(${background})`;
 }
+
+handleChangeLevel = (e) =>{
+ this.setState({
+   level:e.target.value
+ })
+ 
+}
+
   render(){
+    console.log(this.state.level)
   return (
     <main>
     <section className='d-flex align-items-center mt-3'>
@@ -37,7 +47,10 @@ changeBodyBackground=()=>{
       pseudo={this.state.pseudo} 
       isSubmitted={this.state.isSubmitted} 
       handlePseudo={this.handlePseudo} 
-      handleSubmit={this.handleSubmit}/>
+      handleSubmit={this.handleSubmit}
+      level={this.state.level}
+      handleChangeLevel={this.handleChangeLevel}
+      />
     {/* {<main class="container">
         for(let i=0;i<5;i++){
             <section class="row">
@@ -49,7 +62,7 @@ changeBodyBackground=()=>{
             </section>
         }        
     </main>} */}
-    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo}/>
+    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo} level={this.state.level}/>
     </main>
   );
 }
