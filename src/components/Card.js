@@ -13,46 +13,39 @@ import image7 from '../images/david.jfif'
 import image8 from '../images/REACT.png'
 import image9 from '../images/Logo_Konexio.png'
 import background from "../images/background1.jpg"
-import { shuffle } from 'lodash'
-
-const cards = shuffle([  
-{ front: image0, returned: false, id: 0, level:"1" },
-{ front: image1, returned: false, id: 1, level:"1"},
-{ front: image2, returned: false, id: 2, level:"1" },
-{ front: image3, returned: false, id: 3, level:"2" },
-{ front: image4, returned: false, id: 4, level:"2" },
-{ front: image5, returned: false, id: 5, level:"2"},
-{ front: image6, returned: false, id: 6, level:"2" }, 
-{ front: image7, returned: false, id: 7, level:"3" },
-{ front: image8, returned: false, id: 8, level:"3" },
-{ front: image9, returned: false, id: 9, level:"3" },
-{ front: image0, returned: false, id: 0, level:"1" },
-{ front: image1, returned: false, id: 1, level:"1" },
-{ front: image2, returned: false, id: 2, level:"1" },
-{ front: image3, returned: false, id: 3, level:"2" },
-{ front: image4, returned: false, id: 4, level:"2" },
-{ front: image5, returned: false, id: 5, level:"2" },
-{ front: image6, returned: false, id: 6, level:"2" },
-{ front: image7, returned: false, id: 7, level:"3" },
-{ front: image8, returned: false, id: 8, level:"3" },
-{ front: image9, returned: false, id: 9, level:"3" },])
 
 class Card extends React.Component {
   constructor() {
     super()
     this.state = {
-      cards:[],
+      cards: [
+        { front: image0, returned: false, id: 0 },
+        { front: image1, returned: false, id: 1 },
+        { front: image2, returned: false, id: 2 },
+        { front: image3, returned: false, id: 3 },
+        { front: image4, returned: false, id: 4 },
+        { front: image5, returned: false, id: 5 },
+        { front: image6, returned: false, id: 6 },
+        { front: image7, returned: false, id: 7 },
+        { front: image8, returned: false, id: 8 },
+        { front: image9, returned: false, id: 9 },
+        { front: image0, returned: false, id: 0 },
+        { front: image1, returned: false, id: 1 },
+        { front: image2, returned: false, id: 2 },
+        { front: image3, returned: false, id: 3 },
+        { front: image4, returned: false, id: 4 },
+        { front: image5, returned: false, id: 5 },
+        { front: image6, returned: false, id: 6 },
+        { front: image7, returned: false, id: 7 },
+        { front: image8, returned: false, id: 8 },
+        { front: image9, returned: false, id: 9 },
+      ],
       returned: null,
       comparaison: [],
       score: 0,
       shuffled: false,
     }
   }
-
-  componentDidMount () {
-    this.filterCards()
-  }
-
   handleCards = (index) => {
     const cardsClone = [...this.state.cards]
     const clonedComparaison = [...this.state.comparaison, cardsClone[index]]
@@ -64,15 +57,9 @@ class Card extends React.Component {
       score: this.state.score + 1,
     })
   }
-
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(handleCards) {
     this.gameRules()
-    console.log(prevProps)
-    if(this.props.level !== prevProps.level){
-      this.filterCards()
-    }
   }
-
   deleteCards = () => {
     if (
       this.state.comparaison.length === 2 &&
@@ -113,36 +100,26 @@ class Card extends React.Component {
       this.deleteCards()
     }
   }
-  // shuffleCards = (array) => {
-  //   this.setState({ shuffled: true })
-  //   let currentIndex = array.length,
-  //     randomIndex
-  //   while (currentIndex !== 0) {
-  //     randomIndex = Math.floor(Math.random() * currentIndex)
-  //     currentIndex--
-  //     ;[array[currentIndex], array[randomIndex]] = [
-  //       array[randomIndex],
-  //       array[currentIndex],
-  //     ]
-  //   }
-  // }
-
-  filterCards = () => {
-    const filterCards = cards.filter((card) => {
-      return card.level <= this.props.level
-    })
-    this.setState({
-      cards: filterCards
-    })
+  shuffleCards = (array) => {
+    this.setState({ shuffled: true })
+    let currentIndex = array.length,
+      randomIndex
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex--
+      ;[array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ]
+    }
   }
-
-  render() {  
-
+  render() {
     return (
       <>
         {!this.state.endGame && this.props.isSubmitted && (
           <div className="content pt-3">
             <div className="container">
+              {!this.state.shuffled && this.shuffleCards(this.state.cards)}
               {this.state.cards.map((card, index) => (
                 <>
                   {card.returned ? (
@@ -172,9 +149,7 @@ class Card extends React.Component {
           score={this.state.score}
           endGame={this.state.endGame}
           pseudo={this.props.pseudo}
-          level={this.props.level}
         />
-       
       </>
     )
   }
