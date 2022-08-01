@@ -1,4 +1,5 @@
 import React from 'react'
+import './Player.css';
 
 
 
@@ -14,16 +15,16 @@ class Player extends React.Component {
             <label className='fs-2 text m-3 text-light' htmlFor="Nickname">Nickname :</label>
 			<input className="input-group mb-3 p-2" type="text" placeholder="Exemple : Omnivers" onChange={this.props.handlePseudo} value={this.props.pseudo} required/>
 			</div>
-{/* 
+
 			<label htmlFor="level"></label>
-				<select id="home" className='' onChange={this.props.handleChangeLevel}>
+				<select id="home" className='select' onChange={this.props.handleChangeLevel}>
 					<option value="">Choose your level</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
-				</select>  */}
+				</select>  
 
-	    	<button className='play btn btn-success fs-2 text'>Play</button>
+	    	<button className='play'>Play</button>
         </form>
 		}
 		</>

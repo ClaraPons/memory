@@ -1,0 +1,18 @@
+.victory {
+    position: relative;
+    top:70px;
+    padding: 10px 30px;
+    background-color: rgba(255, 2, 171, 0.637);
+    color: white;
+    border: 1px solid rgba(255, 2, 171, 0.637);
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 5px;  
+}
+
+.victory:hover{
+    background-color: rgba(206, 4, 138, 0.637);
+    border: 1px solid rgba(206, 4, 138, 0.637);
+   
+   }
+   

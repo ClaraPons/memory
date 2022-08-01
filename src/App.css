@@ -7,8 +7,11 @@
   text-align: center;
 }
 body{
-  background-image:url("./images/background3.jpg")
-}
+  background: #0f0c29;  
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+  }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,7 +40,7 @@ form{
 }
 .moves{
   font-family: shadow;
-  color:rgba(4, 116, 0, 0.637);
+  color:rgba(255, 2, 171, 0.637);
   font-weight: bold;
 }
 main{
@@ -58,8 +61,22 @@ main{
 }
 .play{
   position: relative;
-  top:100px;
+  top:40px;
+  padding: 6px 45px;
+  background-color: rgba(255, 2, 171, 0.637);
+  color: white;
+  border: 1px solid rgba(255, 2, 171, 0.637);
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 7px;
 }
+
+.play:hover{
+ background-color: rgba(206, 4, 138, 0.637);
+ border: 1px solid rgba(206, 4, 138, 0.637);
+
+}
+
 img{
   cursor: pointer;
   width: 100%;
@@ -77,4 +94,9 @@ img{
 .trophy {
   width: 370px;
   height: auto;
+}
+
+.nickname{
+  background-color:rgba(255, 2, 171, 0.637) ;
+  color: white;
 }

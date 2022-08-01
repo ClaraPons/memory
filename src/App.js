@@ -2,7 +2,6 @@ import './App.css';
 import React  from 'react';
 import Card from "./components/Card";
 import Player from "./components/Player";
-import background from "./images/background2.jpg"
 
 class App extends React.Component {
   constructor(){
@@ -23,23 +22,21 @@ handleSubmit = (e) => {
     this.setState({ isSubmitted: true})
     this.changeBodyBackground()
 }
-changeBodyBackground=()=>{
-  document.body.style.backgroundImage = `url(${background})`;
-}
 
-// handleChangeLevel = (e) =>{
-//  this.setState({
-//    level:e.target.value
-//  })
+
+handleChangeLevel = (e) =>{
+ this.setState({
+   level:e.target.value
+ })
  
-// }
+}
 
   render(){
     console.log(this.state.level)
   return (
     <main>
     <section className='d-flex align-items-center mt-3'>
-    <span className='fs-3 m-4 text-bg-success p-3'>{this.state.isSubmitted&&this.state.pseudo}</span>
+    <span className='nickname fs-3 m-4 p-2'>{this.state.isSubmitted&&this.state.pseudo}</span>
     <h1 className='title text-light'>Memory Game</h1>
     </section>
 
@@ -62,7 +59,7 @@ changeBodyBackground=()=>{
             </section>
         }        
     </main>} */}
-    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo} />
+    <Card isSubmitted={this.state.isSubmitted} pseudo={this.state.pseudo} level={this.state.level} />
     </main>
   );
 }
