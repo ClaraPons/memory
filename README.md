@@ -1,4 +1,5 @@
-#MEMORY
+#MEMORY The game is deployed in : https://singular-marshmallow-57b4e9.netlify.app/
+
 
 // Définition des règles du jeu :
 
